@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <base target="_top">
+  </head>
+  <body>
+    
+    <div style="background: #0F0; width:120px; height: 40px;" id="getBtn">
+      <h3><center>Click</center></h3>
+    </div>
+    
+    <div id="output"></div>
+    
+  </body>
+  <script>
+    function getQuestion(num){
+      google.script.run.withSuccessHandler(printQuestion).getData(num);
+    }
+    
+    function printQuestion(question){
+      document.getElementById('output').innerHTML = '<h2>Question: </h2><h3>' + question + '</h3>';
+    }
+    
+    document.getElementById('getBtn').onclick = function(){
+      getQuestion(1);
+    }
+    
+    getQuestion(0);
+    
+  </script>
+</html>
+
+
+
+
+
+
+
